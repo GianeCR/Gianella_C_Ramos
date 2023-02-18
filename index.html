@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="estilo.css">
+        <title>FORMULARIO</title>
+    </head>
+    <body>
+        
+        <form action="" class="form">
+            <br><h1 class="tit">FORMULARIO</h1><br>
+            <div id="form-grupo">
+                <label for="nombres" class="form-label">NOMBRES : </label><br>
+                <div class="form-grupo-input">
+                    <input type="text" name="nombres" id="Nombres" class="form-input" onkeypress="return sololetras(event)" placeholder="Ingresar Nombres" required>
+                </div> 
+            </div>
+            <br>
+            <div>
+                <label for="inputramdon" class="form-label">NUMERO RAMDON: </label><br>
+                <input class="form-input" type="number" name="inputrandom" id="inputrandom" value="Ingreso ramdon" readonly>
+            </div><br>
+            <div id="form-grupo">
+                <label for="correo" class="form-label">Correo : </label><br>
+                <div class="form-grupo-input">
+                    <input type="email" name="correo" id="correo" class="form-input" placeholder="usuario@dominio.com" required>
+                </div> 
+                <p class="form-input-error" >No ha ingresado su correo</p>
+            </div><br><br>
+            
+            <div class="form-grupo form-grupo-btn-enviar">
+                <button type="submit" class="form-btn">Enviar</button>
+            </div>
+            <br><br>
+        </form>
+        <script>
+            const inputRandomNumber = document.getElementById('inputrandom');
+            window.addEventListener('load', () => {
+                getRandomNumber();
+            })
+            function getRandomNumber() {
+                let randomNumber = Math.random().toString().slice(2, 8);
+                inputRandomNumber.value = randomNumber;
+            }
+        </script>
+    <script src="form.js"></script>
+        </form>
+    </body>
+</html>
